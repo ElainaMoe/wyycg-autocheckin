@@ -11,6 +11,12 @@
 
 <a href="https://afdian.net/@GamerNoTitle"><img src="https://img.shields.io/badge/%E7%88%B1%E5%8F%91%E7%94%B5-GamerNoTitle-%238e8cd8?style=for-the-badge" alt="前往爱发电赞助" width=auto height=auto border="0" /></a> <a href="https://cdn.jsdelivr.net/gh/GamerNoTitle/Picture-repo@master/img/Donate/WeChatPay.png"><img src="https://img.shields.io/badge/%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98-GamerNoTitle-%2304BE02?style=for-the-badge" alt="使用微信赞助" width=auto height=auto border="0" /></a> <a href="https://cdn.jsdelivr.net/gh/GamerNoTitle/Picture-repo@master/img/Donate/AliPay.jpg"><img src="https://img.shields.io/badge/%E6%94%AF%E4%BB%98%E5%AE%9D%E6%94%AF%E4%BB%98-GamerNoTitle-%231678FF?style=for-the-badge" alt="使用支付宝赞助" width=auto height=auto border="0" /></a>
 
+## 目录
+
+- [使用方法](#使用方法)
+- [变量获取](#变量内容获取)
+- [Q&A](#qa)
+
 ## 使用方法
 
 ### 变量添加
@@ -66,3 +72,15 @@
 找@BotFather进行机器人的创建，按照提示创建即可，会给你一个API TOKEN，如果一不小心点过去了可以用命令`/mybots`管理自己的bot，找到自己想要使用的bot并获取API就可以了
 
 ![](https://upimage.alexhchu.com/2020/11/22/0428751a3925e.png)
+
+## Q&A
+
+### 出现错误 telepot.exception.TelegramError
+
+#### Chat not found
+
+请先用你要接受信息的账户发个`/start`给你的bot，或者检查用户ID是否正确！
+
+#### Not found
+
+请检查自己的Telebot Token是否正确！
