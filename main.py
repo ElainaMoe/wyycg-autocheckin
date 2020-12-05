@@ -4,19 +4,22 @@ import json
 import telepot
 
 tele_enable=False
+sc_enable=False
 sign='https://n.cg.163.com/api/v2/sign-today'
 current='https://n.cg.163.com/api/v2/client-settings/@current'
 
 cookie=sys.argv[1]
 teleid=sys.argv[2]
 teletoken=sys.argv[3]
+sckey=sys.argv[4]
 if cookie=="":
     print('[网易云游戏自动签到]未设置cookie，正在退出……')
     sys.exit()
 if teleid!="" and teletoken!="":
     tele_enable=True
     bot=telepot.Bot(teletoken)
-
+if sckey!="":
+    sc_enable=True
 
 getheader={
     'Host': 'n.cg.163.com',
@@ -63,20 +66,28 @@ def send(id,message):
     if tele_enable:
         bot.sendMessage(id, message, parse_mode=None, disable_web_page_preview=None, disable_notification=None, reply_to_message_id=None, reply_markup=None)
 
+def scsend(SCKEY,message):
+    sc_url='http://sc.ftqq.com/{}.send?text=网易云游戏自动签到脚本&desp={}'.format(SCKEY,message)
+    if sc_enable:
+        r.get(url=sc_url)
+
 if __name__ == "__main__":
     me=getme(current,getheader)
     if(me.status_code!=200):
         message='[网易云游戏自动签到]验证失败！请检查Cookie是否过期！或者附上报错信息到 https://github.com/GamerNoTitle/wyycg-autosignin/issues 发起issue'
         send(teleid,message)
+        scsend(sckey,message)
         print(message)
         sys.exit()
     sign=signin(sign,signheader)
     if(sign.status_code==200):
         message='[网易云游戏自动签到]签到成功！'
         send(teleid,message)
+        scsend(sckey,message)
         print(message)
     else:
         message='[网易云游戏自动签到]签到失败，回显状态码为{}\n具体错误信息如下：\n{}'.format(sign.status_code,sign.text)
         send(teleid,message)
+        scsend(sckey,message)
         print(message)
         sys.exit()

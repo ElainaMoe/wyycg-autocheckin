@@ -27,7 +27,7 @@
 
 ![](https://upimage.alexhchu.com/2020/11/22/e9b4bcf8e6a1d.png)
 
-2、进入设置，设置变量`cookie`和`teleid` `teletoken`（这两个可选）
+2、进入设置，设置变量`cookie`和`teleid` `teletoken` `SCKEY`（这三个可选）
 
 [如何获取变量内容？请点这里](#变量内容获取)
 
@@ -74,6 +74,12 @@
 找@BotFather进行机器人的创建，按照提示创建即可，会给你一个API TOKEN，如果一不小心点过去了可以用命令`/mybots`管理自己的bot，找到自己想要使用的bot并获取API就可以了
 
 ![](https://upimage.alexhchu.com/2020/11/22/0428751a3925e.png)
+
+### SCKEY获取
+
+访问[ServerChan官网](http://sc.ftqq.com/?c=code)，用你的Github账户登录，在`发送信息`可以看到你的SCKEY
+
+![](https://upimage.alexhchu.com/2020/12/05/dff25704763d8.png)
 
 ## Q&A
 
